@@ -1,0 +1,137 @@
+/* Container principal */
+.pokedex {
+    max-width: 1000px; /* Agora o container pode ser maior em telas grandes */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilo do título */
+.pokedex h1 {
+    text-align: center;
+    color: #d00000;
+}
+
+/* Barra de pesquisa */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #d00000;
+    font-size: 16px;
+}
+
+/* Grid de cards */
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas médias e grandes */
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Estilo dos cards */
+.pokemon-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
+}
+
+.pokemon-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.pokemon-card h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-transform: capitalize; /* Nome com a primeira letra maiúscula */
+    color: #333;
+}
+
+.pokemon-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Número do Pokémon */
+.pokemon-card .pokemon-number {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Container para centralizar o botão */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centraliza o botão horizontalmente */
+    align-items: center; /* Centraliza o botão verticalmente, se necessário */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+/* Estilo do botão */
+#buttonMore {
+    background-color: #d00000; /* Cor de fundo vermelho */
+    color: #fff; /* Cor do texto */
+    padding: 16px 40px; /* Aumentei o padding para deixá-lo mais "gordinho" */
+    font-size: 18px; /* Tamanho do texto maior */
+    font-weight: bold;
+    text-transform: uppercase; /* Letras maiúsculas */
+    border: none; /* Remove a borda */
+    border-radius: 35px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra o ícone de mãozinha ao passar por cima */
+    transition: all 0.3s ease; /* Transição suave para efeitos */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra do botão */
+}
+
+#buttonMore:hover {
+    background-color: #a30000; /* Cor mais escura ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
+    transform: scale(1.05); /* Aumenta o tamanho levemente no hover */
+}
+
+#buttonMore:active {
+    background-color: #8b0000; /* Cor ainda mais escura ao clicar */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Sombra reduzida ao clicar */
+    transform: scale(0.98); /* Reduz um pouco ao clicar */
+}
+
+/* Responsividade */
+
+/* Para telas pequenas (celulares) - 1 coluna */
+@media (max-width: 600px) {
+    .pokemon-grid {
+        grid-template-columns: 1fr; /* 1 coluna em telas menores */
+    }
+}
+
+/* Para telas médias (tablets) - 2 colunas */
+@media (min-width: 601px) and (max-width: 900px) {
+    .pokemon-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para tablets */
+    }
+}
+
+/* Para telas grandes (desktops) - 3 colunas */
+@media (min-width: 901px) {
+    .pokemon-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas para desktops */
+    }
+}
+
+/* 
